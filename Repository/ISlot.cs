@@ -5,16 +5,16 @@ namespace MPE.Repository
     public interface ISlot
     {
 
-        Task<List<Slot>> GetAllSlot();
+        Task<List<Slot>> GetAllSlotAsync();
 
-        Task<Slot> GetSlotById(Guid  slotId);
+        Task<Slot> GetSlotByIdAsync(Guid  slotId);
 
-        Task<Slot> CreateSlot(Slot slot);
+        Task<Slot> CreateSlotAsync(Slot slot);
         
 
-        Task<Slot> UpdateSlot(Slot slot,Guid id);
+        Task<Slot> UpdateSlotAsync(Slot slot,Guid id);
 
-        Task<Slot> DeleteSlot(Guid slotId);
+        Task<Slot> DeleteSlotAsync(Guid slotId);
 
        
 

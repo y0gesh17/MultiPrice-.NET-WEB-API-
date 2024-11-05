@@ -10,7 +10,7 @@ namespace MPE.Repository
         public SlotRepo(ProductDbContext dbContext ) {
             this.dbContext = dbContext;
         }
-        public async Task<Slot> CreateSlot(Slot slot)
+        public async Task<Slot> CreateSlotAsync(Slot slot)
         {
             await dbContext.slots.AddAsync(slot);
             await dbContext.SaveChangesAsync();
@@ -19,7 +19,7 @@ namespace MPE.Repository
                 
                 }
 
-        public async Task<Slot> DeleteSlot(Guid slotId)
+        public async Task<Slot> DeleteSlotAsync(Guid slotId)
         {
             var slot =await dbContext.slots.FirstOrDefaultAsync(x=>x.SlotId==slotId);
 
@@ -34,13 +34,13 @@ namespace MPE.Repository
 
         }
 
-        public async Task<List<Slot>> GetAllSlot()
+        public async Task<List<Slot>> GetAllSlotAsync()
         {
           var allSlots=  await dbContext.slots.ToListAsync();
             return allSlots;
         }
 
-        public async Task<Slot> GetSlotById(Guid slotId)
+        public async Task<Slot> GetSlotByIdAsync(Guid slotId)
         {
             var slot = await dbContext.slots.FirstOrDefaultAsync(x=>x.SlotId ==slotId);
 
@@ -52,9 +52,28 @@ namespace MPE.Repository
         }
 
       
-        public Task<Slot> UpdateSlot(Slot slot)
+        public async Task<Slot> UpdateSlotAsync(Slot slot,Guid id)
         {
-            throw new NotImplementedException();
+
+            var Currentslot = await dbContext.slots.FirstOrDefaultAsync (x=>x.SlotId==id);
+
+            if (Currentslot == null) {
+                return null;
+            }
+
+            Currentslot.ProductId=slot.ProductId;
+            Currentslot.MaximumSlotSize=slot.MaximumSlotSize;
+            Currentslot.DiscountInPercent=slot.DiscountInPercent;
+            Currentslot.CurrentSlotSize=slot.CurrentSlotSize;
+
+          await  dbContext.SaveChangesAsync();
+
+            return Currentslot;
+
+
+            
         }
+
+      
     }
 }

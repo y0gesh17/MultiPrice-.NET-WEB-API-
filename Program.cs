@@ -245,6 +245,7 @@ builder.Services.AddDbContext<ProductDbContext>(options =>
 builder.Services.AddScoped<ITokenRepository, TokenRepository>();
 builder.Services.AddScoped<IRegistration, Registrations>();
 builder.Services.AddScoped<IProduct, ProductRepo>();
+builder.Services.AddScoped<ISlot, SlotRepo>();
 builder.Services.AddAutoMapper(typeof(MPE.Mappings.AutoMapperProfiles));
 
 
@@ -323,6 +324,13 @@ if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
+}
+
+using (var scope = app.Services.CreateScope())
+{
+    var db = scope.ServiceProvider.GetRequiredService<ProductDbContext>();
+    db.Database.Migrate();  // Applies any pending migrations
+    db.Seed();              // Seeds the database if it's empty
 }
 app.UseCors("AllowAll");
 //app.UseMiddleware<ExceptionHandlerMiddleware>();

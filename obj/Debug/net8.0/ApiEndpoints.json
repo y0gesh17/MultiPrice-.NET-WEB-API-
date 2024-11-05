@@ -117,6 +117,85 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "MPE.Controllers.SlotController",
+    "Method": "GetAllSlot",
+    "RelativePath": "api/Slot",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MPE.Controllers.SlotController",
+    "Method": "GetById",
+    "RelativePath": "api/Slot/{Id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MPE.Controllers.SlotController",
+    "Method": "CreateSlot",
+    "RelativePath": "api/Slot/Create",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "slot",
+        "Type": "MPE.Models.Slot",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MPE.Controllers.SlotController",
+    "Method": "DeleteSlot",
+    "RelativePath": "api/Slot/Delete",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Id",
+        "Type": "System.Guid",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MPE.Controllers.SlotController",
+    "Method": "UpdateSlot",
+    "RelativePath": "api/Slot/Update/{id}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "slots",
+        "Type": "MPE.Models.Slot",
+        "IsRequired": true
+      },
+      {
+        "Name": "Id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "MPE.Controllers.WeatherForecastController",
     "Method": "Get",
     "RelativePath": "WeatherForecast",
