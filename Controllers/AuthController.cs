@@ -48,7 +48,7 @@ public class AuthController : ControllerBase
             password = m.password,
             email = m.email,
             ConfirmPassword = m.password,
-            Role = ["reader", "writer"]
+            Role = m.role
 
         };
         if (model.password != model.ConfirmPassword)
@@ -58,8 +58,8 @@ public class AuthController : ControllerBase
         {
 
             UserName = model.email,
-            Email = model.email,
-        };
+            Email = model.email
+        }; 
 
         var identityResult = await usermanager.CreateAsync(identityUser, model.password);
 
