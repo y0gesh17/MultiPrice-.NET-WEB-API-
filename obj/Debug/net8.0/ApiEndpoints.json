@@ -32,6 +32,85 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "MPE.Controllers.BucketController",
+    "Method": "GetAllBucket",
+    "RelativePath": "api/Bucket",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MPE.Controllers.BucketController",
+    "Method": "GetById",
+    "RelativePath": "api/Bucket/{Id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MPE.Controllers.BucketController",
+    "Method": "CreateBucket",
+    "RelativePath": "api/Bucket/Create",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "bucket",
+        "Type": "MPE.Models.Bucket",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MPE.Controllers.BucketController",
+    "Method": "Deleteucket",
+    "RelativePath": "api/Bucket/Delete",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Id",
+        "Type": "System.Guid",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MPE.Controllers.BucketController",
+    "Method": "UpdateBucket",
+    "RelativePath": "api/Bucket/Update/{id}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "bucket",
+        "Type": "MPE.Models.Bucket",
+        "IsRequired": true
+      },
+      {
+        "Name": "Id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "MPE.Controllers.ProductController",
     "Method": "GetById",
     "RelativePath": "api/Product/{id}",

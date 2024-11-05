@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MPE")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f75da528a782ebe77d9177f2d49bab2c115a85dc")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9b73dcf4a52cff41fc179692e567b6fdccf8d449")]
 [assembly: System.Reflection.AssemblyProductAttribute("MPE")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MPE")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
